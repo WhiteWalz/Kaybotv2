@@ -16,6 +16,8 @@ class MyClient(Client):
                 imgURL = GenerateImage(message.content[1:])
             except:
                 print('Error encountered during image generation.')
+                await message.delete()
+                print('user message deleted.')
                 return
             print('sending message...')
             botmsg = await message.channel.send(f'{imgURL}', reference=message.reference)
