@@ -9,9 +9,9 @@ client = OpenAI(api_key=getenv('OPENAI_KEY'))
 def GenerateImage(prompt: str):
     print(f'Generating image with prompt: {prompt}.')
     response = client.images.generate(
-        model='dall-e-3',
-        prompt= prompt + ', in the style of a twitch emote',
-        size="1024x1024",
+        model='dall-e-2',
+        prompt= prompt + ', in the style of a twitch emote, cute',
+        size="512x512",
         quality="standard",
         n=1
     )
